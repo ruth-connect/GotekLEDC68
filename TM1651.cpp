@@ -234,6 +234,77 @@ uint8_t TM1651::getCharacterCode(char character) {
 			return 0x7f;
 		case '9':
 			return 0x6f;
+		case 'A':
+			return 119;
+		case 'a':
+			return 95;
+		case 'B':
+		case 'b':
+			return 124;
+		case 'C':
+			return 57;
+		case 'c':
+			return 88;
+		case 'D':
+		case 'd':
+			return 94;
+		case 'E':
+		case 'e':
+			return 121;
+		case 'F':
+		case 'f':
+			return 113;
+		case 'G':
+		case 'g':
+			return 61;
+		case 'H':
+			return 118;
+		case 'h':
+			return 116;
+		case 'I':
+		case 'i':
+			return 6;
+		case 'J':
+		case 'j':
+			return 30;
+		case 'K':
+		case 'k':
+			return 122;
+		case 'L':
+			return 56;
+		case 'l':
+			return 24;
+		case 'N':
+			return 55;
+		case 'n':
+			return 84;
+		case 'O':
+			return 63;
+		case 'o':
+			return 92;
+		case 'P':
+		case 'p':
+			return 115;
+		case 'Q':
+		case 'q':
+			return 103;
+		case 'R':
+			return 49;
+		case 'r':
+			return 80;
+		case 'S':
+		case 's':
+			return 109;
+		case 'T':
+		case 't':
+			return 120;
+		case 'U':
+			return 62;
+		case 'u':
+			return 28;
+		case 'Y':
+		case 'y':
+			return 110;
 		default:
 			return 0x00;
 	}
