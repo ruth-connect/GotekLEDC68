@@ -61,7 +61,7 @@ class TM1651
 	void stop(void);				// send stop bits
 	void displayNum(uint8_t pos, uint8_t num);
 	void displayRaw(uint8_t pos, uint8_t num);
-	void displayCharacter(uint8_t pos, uint8_t num);
+	void displayCharacter(uint8_t pos, char character);
 	void displayInteger(uint16_t num);
 	void displayDP(uint8_t pos);
 	void frame(bool FrameFlag);

@@ -44,8 +44,7 @@ int main(int argc, char *argv[]) {
 		return 1;
 	}
 	char *text = argv[1];
-	printf("position: %d\n", position);
-	printf("number: %d\n", number);
+	printf("text to display: %s", text);
 	printf("about to set up WiringPi\n");
 	if (wiringPiSetup() == -1)
 		return 1;
