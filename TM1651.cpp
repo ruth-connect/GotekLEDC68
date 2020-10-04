@@ -46,6 +46,8 @@ int main(int argc, char *argv[]) {
 	if (wiringPiSetup () == -1) return 1;
 	printf("about to construct\n");
 	TM1651 display(9, 8);
+	printf("about to display clear\n");
+	display.displayClear();
 	printf("about to display raw\n");
 	display.displayInteger(614);
 //	display.displayRaw((uint8_t)atoi(argv[0]), (uint8_t)atoi(argv[1]));
