@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
 	TM1651 display(9, 8);
 	display.displayClear();
 	display.displaySet(4);
-	display.displayInteger(123);
+	display.displayRaw(argv[0], argv[1]);
 }
 
 TM1651::TM1651(uint8_t Clk, uint8_t Data)
@@ -130,6 +130,22 @@ void TM1651::displayNum(uint8_t dig, uint8_t number)
   writeByte(Cmd_DispCtrl);// 88+0 to 7 brightness, 88=display on
   stop();           //
 }
+
+//******************************************
+void TM1651::displayRaw(uint8_t dig, uint8_t number)
+{
+  start();          //start signal sent to TM1651 from MCU
+  writeByte(ADDR_FIXED);//
+  stop();           //
+  start();          //
+  writeByte(STARTADDR + dig);// digit pos 0-2
+  writeByte(number);//
+  stop();            //
+  start();          //
+  writeByte(Cmd_DispCtrl);// 88+0 to 7 brightness, 88=display on
+  stop();           //
+}
+
 //******************************************
 void TM1651::displayInteger(uint16_t number)
 {
