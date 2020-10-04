@@ -169,7 +169,7 @@ void TM1651::displayCharacter(uint8_t dig, char character) {
 	stop();
 	start();
 	writeByte(STARTADDR + dig);				// digit pos 0-2
-	writeByte(getCharacterCode(character));
+	writeByte(getCharacterCode(character + 128));
 	stop();
 	start();
 	writeByte(Cmd_DispCtrl);				// 88+0 to 7 brightness, 88=display on
