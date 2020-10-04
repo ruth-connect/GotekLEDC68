@@ -63,7 +63,7 @@ class TM1651
 	void displayNum(uint8_t pos, uint8_t num);
 	void displayInteger(uint16_t num);
 	void displayDP(uint8_t pos);
-	void frame(boolean FrameFlag);
+	void frame(bool FrameFlag);
 	void displayClear(void);
 	void displaySet(uint8_t = BRIGHT_TYPICAL);
 	void displayOff();
