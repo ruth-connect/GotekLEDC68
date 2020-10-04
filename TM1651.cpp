@@ -141,7 +141,7 @@ void TM1651::displayNum(uint8_t dig, uint8_t number)
 //******************************************
 void TM1651::displayRaw(uint8_t dig, uint8_t number)
 {
-  sprintf("displayRaw: %d %d", (int)dig, (int)number);
+  printf("displayRaw: %d %d", (int)dig, (int)number);
   start();          //start signal sent to TM1651 from MCU
   writeByte(ADDR_FIXED);//
   stop();           //
