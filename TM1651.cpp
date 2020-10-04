@@ -51,8 +51,8 @@ int main(int argc, char *argv[]) {
 	printf("about to display set\n");
 	display.displaySet(4);
 	printf("about to display raw\n");
-	display.displayInteger(614);
-//	display.displayRaw((uint8_t)atoi(argv[0]), (uint8_t)atoi(argv[1]));
+//	display.displayInteger(614);
+	display.displayRaw((uint8_t)atoi(argv[0]), (uint8_t)atoi(argv[1]));
 }
 
 TM1651::TM1651(uint8_t Clk, uint8_t Data)
