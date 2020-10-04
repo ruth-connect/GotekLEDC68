@@ -320,6 +320,9 @@ uint8_t TM1651::getCharacterCode(char character) {
 		case 'Y':
 		case 'y':
 			return 110;
+		case 'Z':
+		case 'z':
+			return 0x5b;
 		default:
 			return 0x00;
 	}
