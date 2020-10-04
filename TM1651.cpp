@@ -42,6 +42,7 @@ static int8_t NumTab[] =
 }; //numbers 0-9, A-F, special chars
 
 int main(int argc, char *argv[]) {
+	printf("about to set up WiringPi");
 	if (wiringPiSetup () == -1) return 1;
 	printf("about to construct\n");
 	TM1651 display(9, 8);
