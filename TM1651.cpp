@@ -55,8 +55,8 @@ int main(int argc, char *argv[]) {
 	display.displayClear();
 	printf("about to display set\n");
 	display.displaySet(4);
-	printf("about to display raw\n");
-	display.displayRaw((uint8_t) position, (uint8_t) number);
+	printf("about to display character\n");
+	display.displayRaw((uint8_t) position, text[0]);
 }
 
 TM1651::TM1651(uint8_t Clk, uint8_t Data) {
@@ -145,6 +145,21 @@ void TM1651::displayRaw(uint8_t dig, uint8_t number) {
 }
 
 //******************************************
+void TM1651::displayCharacter(uint8_t dig, char character) {
+	printf("displayCharacter: %d %d\n", dig, character);
+	start();								// start signal sent to TM1651 from MCU
+	writeByte(ADDR_FIXED);
+	stop();
+	start();
+	writeByte(STARTADDR + dig);				// digit pos 0-2
+	writeByte(getCharacterCode(character));
+	stop();
+	start();
+	writeByte(Cmd_DispCtrl);				// 88+0 to 7 brightness, 88=display on
+	stop();
+}
+
+//******************************************
 void TM1651::displayInteger(uint16_t number) {
 	uint8_t i;
 
@@ -196,4 +211,31 @@ void TM1651::displayOff() {
 	start();
 	writeByte(Cmd_DispCtrl);				// 88+0 to 7 brightness, 88=display on
 	stop();
+}
+
+uint8_t TM1651::getCharacterCode(char character) {
+	switch (character) {
+		case '0':
+			return 0x3f;
+		case '1':
+			return 0x06;
+		case '2':
+			return 0x5b;
+		case '3':
+			return 0x4f;
+		case '4':
+			return 0x66;
+		case '5':
+			return 0x6d;
+		case '6':
+			return 0x7c;
+		case '7':
+			return 0x07;
+		case '8':
+			return 0x7f;
+		case '9':
+			return 0x6f;
+		default:
+			return 0x00;
+	}
 }

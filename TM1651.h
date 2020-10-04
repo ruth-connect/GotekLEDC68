@@ -56,10 +56,9 @@ class TM1651
 	uint8_t Cmd_SetAddr;
 	uint8_t Cmd_DispCtrl;
 	TM1651(uint8_t, uint8_t);
-	//void init();
-	void writeByte(int8_t wr_data);//write 8bit data to tm1651
-	void start(void);//send start bits
-	void stop(void); //send stop bits
+	void writeByte(int8_t wr_data);	// write 8bit data to tm1651
+	void start(void);				// send start bits
+	void stop(void);				// send stop bits
 	void displayNum(uint8_t pos, uint8_t num);
 	void displayRaw(uint8_t pos, uint8_t num);
 	void displayInteger(uint16_t num);
@@ -68,6 +67,7 @@ class TM1651
 	void displayClear(void);
 	void displaySet(uint8_t = BRIGHT_TYPICAL);
 	void displayOff();
+	uint8_t getCharacterCode(char character);
   private:
 	uint8_t Clkpin;
 	uint8_t Datapin;
