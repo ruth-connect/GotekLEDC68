@@ -55,12 +55,13 @@ int main(int argc, char *argv[]) {
 	printf("about to display set\n");
 	display.displaySet(4);
 	printf("about to display characters\n");
+	display.displayDP(0);
 	int textPos = 0;
 	int displayPos = 0;
 	while (text[textPos] > 0 && displayPos < 3) {
 		char character = text[textPos];
 		if (character == '.') {
-			display.displayDP(displayPos);
+			// TODO
 		} else {
 			display.displayCharacter(displayPos, character);
 			displayPos++;
