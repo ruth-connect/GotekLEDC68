@@ -55,7 +55,7 @@ int main(int argc, char *argv[]) {
 	printf("about to display set\n");
 	display.displaySet(4);
 	printf("about to display character\n");
-	display.displayCharacter((uint8_t) position, text[0]);
+	display.displayCharacter(0, text[0]);
 }
 
 TM1651::TM1651(uint8_t Clk, uint8_t Data) {
