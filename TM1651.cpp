@@ -60,7 +60,7 @@ int main(int argc, char *argv[]) {
 	while (text[textPos] > 0 && displayPos < 3) {
 		char character = text[textPos];
 		if (character == '.') {
-			// TODO
+			display.displayDP(displayPos);
 		} else {
 			display.displayCharacter(displayPos, character);
 			displayPos++;
