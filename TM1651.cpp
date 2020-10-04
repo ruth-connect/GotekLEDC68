@@ -54,8 +54,23 @@ int main(int argc, char *argv[]) {
 	display.displayClear();
 	printf("about to display set\n");
 	display.displaySet(4);
-	printf("about to display character\n");
-	display.displayCharacter(0, text[0]);
+	printf("about to display characters\n");
+	textPos = 0;
+	displayPos = 0;
+	while (text[textPos] > 0 && displayPos < 3) {
+		char character = text[textPos];
+		if (character == '.') {
+			// TODO
+		} else {
+			display.displayCharacter(displayPos, character);
+			displayPos++;
+		}
+		textPos++;
+	}
+	while (displayPos < 3) {
+		display.displayCharacter(displayPos, ' ');
+		displayPos++;
+	}
 }
 
 TM1651::TM1651(uint8_t Clk, uint8_t Data) {
