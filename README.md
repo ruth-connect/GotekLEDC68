@@ -9,7 +9,14 @@ Gotek 3-digit LED display driver
 
 
   Date:20 September 2020
-
+  
+  
+  Modified by Ruth Mills to work on the Raspberry Pi, 4th October 2020
+  
+  For the Pi,
+  * sudo apt install wiringpi
+  * g++ -o TM1651 TM1651.cpp -lwiringPi
+  * ./TM1651 text
 
 This repository is based on an article found here [[TM1651 Arduino Library]](https://www.instructables.com/id/Arduino-Library-and-Examples-for-TM1651-New-Style-/) 
 
