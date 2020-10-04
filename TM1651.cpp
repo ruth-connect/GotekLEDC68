@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
 	TM1651 display(9, 8);
 	display.displayClear();
 	display.displaySet(4);
-	display.displayRaw(argv[0], argv[1]);
+	display.displayRaw(atoi(argv[0]), atoi(argv[1]));
 }
 
 TM1651::TM1651(uint8_t Clk, uint8_t Data)
