@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
 	char *text = argv[1];
 	int dp = atoi(argv[2]);
 	printf("DP: %d\n", dp);
-	printf("text to display: %s", text);
+	printf("text to display: %s\n", text);
 	printf("about to set up WiringPi\n");
 	if (wiringPiSetup() == -1)
 		return 1;
