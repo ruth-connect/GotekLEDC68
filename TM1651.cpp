@@ -43,8 +43,9 @@ static int8_t NumTab[] =
 
 int main(int argc, char *argv[]) {
 	if (wiringPiSetup () == -1) return 1;
-	TM1651 *test = new TM1651(9, 8);
-	test->displayNum(0, 0);
+	TM1651 display(9, 8);
+	display.displaySet(2);
+	display.displayInteger(123);
 }
 
 TM1651::TM1651(uint8_t Clk, uint8_t Data)
