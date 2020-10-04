@@ -42,7 +42,7 @@ static int8_t NumTab[] =
 }; //numbers 0-9, A-F, special chars
 
 int main(int argc, char *argv[]) {
-	printf("about to set up WiringPi");
+	printf("about to set up WiringPi\n");
 	if (wiringPiSetup () == -1) return 1;
 	printf("about to construct\n");
 	TM1651 display(9, 8);
@@ -69,7 +69,7 @@ TM1651::TM1651(uint8_t Clk, uint8_t Data)
 
 void TM1651::writeByte(int8_t wr_data)
 {
-  printf("writeByte\n");
+//  printf("writeByte\n");
   uint8_t i,count1=0;   
   for(i=0;i<8;i++)        //send 8bit data
   {
