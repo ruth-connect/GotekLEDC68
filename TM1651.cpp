@@ -43,8 +43,11 @@ static int8_t NumTab[] =
 
 int main(int argc, char *argv[]) {
 	if (wiringPiSetup () == -1) return 1;
+	printf("about to construct\n");
 	TM1651 display(9, 8);
+	printf("about to display raw\n");
 	display.displayRaw((uint8_t)atoi(argv[0]), (uint8_t)atoi(argv[1]));
+	printf("about to display set\n");
 	display.displaySet(4);
 }
 
@@ -64,6 +67,7 @@ TM1651::TM1651(uint8_t Clk, uint8_t Data)
 
 void TM1651::writeByte(int8_t wr_data)
 {
+  printf("writeByte\n");
   uint8_t i,count1=0;   
   for(i=0;i<8;i++)        //send 8bit data
   {
