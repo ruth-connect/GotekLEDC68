@@ -39,31 +39,23 @@ static int8_t NumTab[] = { 0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7c, 0x07, 0x7f,
 		0x08 }; //numbers 0-9, A-F, special chars
 
 int main(int argc, char *argv[]) {
-	if (argc < 2) {
+	if (argc < 1) {
 		printf("not enough parameters");
 		return 1;
 	}
 	char *text = argv[1];
-	int dp = atoi(argv[2]);
-	printf("DP: %d\n", dp);
-	printf("text to display: %s\n", text);
-	printf("about to set up WiringPi\n");
 	if (wiringPiSetup() == -1)
 		return 1;
-	printf("about to construct\n");
 	TM1651 display(9, 8);
-	printf("about to display clear\n");
 	display.displayClear();
-	printf("about to display set\n");
 	display.displaySet(4);
-	printf("about to display characters\n");
-	display.displayDP(dp);
 	int textPos = 0;
 	int displayPos = 0;
+	display.displayDP(0);
 	while (text[textPos] > 0 && displayPos < 3) {
 		char character = text[textPos];
 		if (character == '.') {
-//			display.displayDP(dp);
+			display.displayDP(8);
 		} else {
 			display.displayCharacter(displayPos, character);
 			displayPos++;
