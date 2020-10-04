@@ -33,7 +33,7 @@
 #ifndef TM1651_H
 #define TM1651_H
 #include <inttypes.h>
-#include <Arduino.h>
+
 	//************definitions for TM1651*********************
 #define ADDR_AUTO  0x40
 #define ADDR_FIXED 0x44
