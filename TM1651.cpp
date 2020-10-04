@@ -206,7 +206,7 @@ void TM1651::displayDP(uint8_t dp) {
 	writeByte(ADDR_FIXED);
 	stop();
 	start();
-	writeByte(STARTADDR + 4);				// digit pos 3 controls decimal point
+	writeByte(STARTADDR + 3);				// digit pos 3 controls decimal point
 	//writeByte(SegData);
 	writeByte(dp);
 	stop();
