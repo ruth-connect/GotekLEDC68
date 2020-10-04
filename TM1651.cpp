@@ -42,6 +42,14 @@ static int8_t NumTab[] =
 }; //numbers 0-9, A-F, special chars
 
 int main(int argc, char *argv[]) {
+	if (argc < 2) {
+		printf("not enough parameters");
+		return 1;
+	}
+	int position = atoi(argv[0]);
+	int number = atoi(argv[1]);
+	printf("position: %d", position);
+	printf("number: %d", number);
 	printf("about to set up WiringPi\n");
 	if (wiringPiSetup () == -1) return 1;
 	printf("about to construct\n");
@@ -52,7 +60,7 @@ int main(int argc, char *argv[]) {
 	display.displaySet(4);
 	printf("about to display raw\n");
 //	display.displayInteger(614);
-	display.displayRaw((uint8_t)atoi(argv[0]), (uint8_t)atoi(argv[1]));
+	display.displayRaw((uint8_t)position, (uint8_t)number);
 }
 
 TM1651::TM1651(uint8_t Clk, uint8_t Data)
