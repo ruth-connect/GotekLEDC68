@@ -42,7 +42,7 @@ static int8_t NumTab[] =
 }; //numbers 0-9, A-F, special chars
 
 int main(int argc, char *argv[]) {
-
+	if (wiringPiSetup () == -1) return 1;
 	TM1651 *test = new TM1651(9, 8);
 	test->displayNum(0, 0);
 }
