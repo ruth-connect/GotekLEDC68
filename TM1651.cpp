@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
 	printf("about to construct\n");
 	TM1651 display(9, 8);
 	printf("about to display raw\n");
-	displayInteger(614);
+	display.displayInteger(614);
 //	display.displayRaw((uint8_t)atoi(argv[0]), (uint8_t)atoi(argv[1]));
 	printf("about to display set\n");
 	display.displaySet(4);
