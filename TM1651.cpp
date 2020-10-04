@@ -46,10 +46,10 @@ int main(int argc, char *argv[]) {
 		printf("not enough parameters");
 		return 1;
 	}
-	int position = atoi(argv[0]);
-	int number = atoi(argv[1]);
-	printf("position: %d", position);
-	printf("number: %d", number);
+	int position = atoi(argv[1]);
+	int number = atoi(argv[2]);
+	printf("position: %d\n", position);
+	printf("number: %d\n", number);
 	printf("about to set up WiringPi\n");
 	if (wiringPiSetup () == -1) return 1;
 	printf("about to construct\n");
