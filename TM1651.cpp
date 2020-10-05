@@ -272,8 +272,9 @@ uint8_t TM1651::getCharacterCode(char character) {
 		case 'h':
 			return 116;
 		case 'I':
-		case 'i':
 			return 6;
+		case 'i':
+			return 4;
 		case 'J':
 		case 'j':
 			return 30;
