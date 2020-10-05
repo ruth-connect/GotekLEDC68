@@ -237,7 +237,7 @@ uint8_t TM1651::getCharacterCode(char character) {
 		case '5':
 			return 0x6d;
 		case '6':
-			return 0x7c;
+			return 0x7d;
 		case '7':
 			return 0x07;
 		case '8':
