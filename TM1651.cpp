@@ -319,6 +319,8 @@ uint8_t TM1651::getCharacterCode(char character) {
 		case 'Z':
 		case 'z':
 			return 0x5b;
+		case '-':
+			return 64;
 		default:
 			return 0x00;
 	}
